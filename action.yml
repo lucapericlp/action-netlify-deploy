@@ -23,6 +23,10 @@ inputs:
     description: When provided, prints more debug info in NETLIFY_OUTPUT
     required: false
     default: ""
+  working_directory:
+    description: Directory where subsequent commands will be run
+    required: false
+    default: ""
   build_directory:
     description: Directory where built files are stored
     required: true
@@ -85,6 +89,7 @@ runs:
           DEBUG: ${{ inputs.debug }}
           COMMAND_EXTRA_FLAGS: ${{ inputs.command_extra_flags }}
           NETLIFY_PATH: ${{ inputs.netlify_path }}
+          WORKING_DIRECTORY: ${{ inputs.working_directory }}
 
 branding:
   icon: activity
