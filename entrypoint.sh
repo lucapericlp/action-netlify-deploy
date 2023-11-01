@@ -2,6 +2,14 @@
 
 set -e
 
+# Run working directory
+if [[ -n "${WORKING_DIRECTORY}" ]]
+then
+  cd ${WORKING_DIRECTORY}
+else
+  echo "Staying put..."
+fi
+
 # Run install command
 if [[ -n "${INSTALL_COMMAND}" ]]
 then
